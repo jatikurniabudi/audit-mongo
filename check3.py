@@ -37,10 +37,10 @@ def check_3_1():
 
 # 3.2 RBAC is enabled
 def check_3_2(config):
-    enabled = config.get("security", {}).get("authorization") == "enabled"
+    rbac_enabled = config.get("security", {}).get("authorization") == "enabled"
     print_result("3.2 Role-based access control enabled",
-                 enabled,
-                 "RBAC is enabled" if enabled else "RBAC is not enabled.",
+                 rbac_enabled,
+                 "RBAC is enabled" if rbac_enabled else "RBAC is not enabled.",
                  "Set 'security.authorization: enabled' in mongod.conf.")
 
 # 3.3 mongod runs as non-root user
